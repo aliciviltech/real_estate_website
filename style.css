@@ -1,0 +1,687 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(assests/fonts/poppins/Poppins-Medium.ttf);
+}
+
+:root {
+    --primary-color: #e7e7e7;
+}
+
+.home-page {
+    width: 97%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    border-radius: 50px;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    margin: 30px 0;
+    position: relative;
+}
+
+header nav {
+    display: flex;
+    gap: 5vw;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 40px;
+}
+
+header nav ul li {
+    list-style-type: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-family: poppins;
+    color: #1F1F1F;
+}
+
+header nav ul li a button {
+    padding: 20px 35px;
+    border-radius: 30px;
+    border: 1px solid #BEBEBE;
+    font-family: poppins;
+}
+
+header #menuBars {
+    display: none;
+}
+
+@media screen and (max-width:1144px) {
+    header nav {
+        /* display: none; */
+        position: absolute;
+        top: 80px;
+        right: -300px;
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        padding: 30px;
+        border-radius: 10px;
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    header .moveNav {
+        right: 0;
+    }
+
+    nav .nav-1,
+    nav .nav-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    header #menuBars {
+        display: block;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:430px) {
+    header nav {
+        /* display: none; */
+        position: absolute;
+        top: 80px;
+        right: -500px;
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+        border-radius: 10px;
+        transition: 0.3s;
+        z-index: 1;
+    }
+}
+/* ===================== Banner Section ======================== */
+.banner-section {
+    height: 80vh;
+}
+
+.banner-container {
+    height: clamp(50vh, 40vw, 70vh);
+    background-image: url(assests/images/banner1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.banner-container .text-side {
+    flex: 4;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-container .text-side h1 {
+    font-size: clamp(40px, 4vw, 60px);
+    font-weight: bolder;
+    line-height: clamp(51px, 5vw, 70px);
+    margin-top: 20px;
+}
+
+.banner-container .text-side p {
+    margin-top: 20px;
+}
+
+.banner-container .text-side .input {
+    width: fit-content;
+    position: relative;
+    margin-top: 20px;
+}
+
+.banner-container .text-side input {
+    height: 60px;
+    width: 438px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    padding: 20px;
+}
+
+.banner-container .text-side button {
+    width: 147px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: #1F1F1F;
+    border: none;
+    color: #FAFAFA;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.banner-container .image-side {
+    flex: 6;
+    height: fit-content;
+}
+
+.banner-container .image-side img {
+    width: 100%;
+}
+
+@media screen and (max-width:1024px) {
+    .banner-section {
+        height: fit-content;
+    }
+
+    .banner-container {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+
+    .banner-container .text-side {
+        padding: 50px 70px;
+    }
+    .banner-container .image-side {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .banner-container .image-side img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .banner-container .text-side {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .banner-container .text-side input {
+        height: 6vw;
+        min-height: 32px;
+        width: 70vw;
+        min-width: 366px;
+        border-radius: 40px;
+        border: none;
+        outline: none;
+        padding: 10px;
+    }
+
+    .banner-container .text-side button {
+        width: 20vw;
+        min-width: 105px;
+        height: 6vw;
+        min-height: 32px;
+    }
+    .banner-container .image-side {
+        text-align: right;
+    }
+
+    .banner-container .image-side img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .banner-container .text-side h1 {
+        font-size: 50px;
+        font-weight: bolder;
+        line-height: 70px;
+        margin-top: 20px;
+    }
+    .banner-container .text-side .input {
+        width: 100%;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .banner-container .text-side input {
+        height: 32px;
+        width: 100%;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .banner-container .text-side button {
+        width: 100%;
+        height: 32px;
+        min-height: unset;
+        min-width: unset;
+        position: static;
+    }
+    
+}
+
+/* ====================== interaction section ====================== */
+.interaction-section .heading {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.interaction-section .heading h1 {
+    font-size: 50px;
+}
+
+.interaction-section .cards-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 10vw;
+}
+@media screen and (max-width:768px) {
+    .interaction-section .cards-container {
+        margin-top: 50px;
+        flex-direction: column;
+        gap: 10vw;
+    }
+    .interaction-section .card {
+        text-align: center;
+    }
+
+}
+@media screen and (max-width:430px) {
+    .interaction-section .heading h1 {
+        font-size: 40px;
+    }
+}
+/* ====================== project section ====================== */
+.projects-section{
+    width: 95%;
+    margin: auto;
+}
+.projects-section .heading {
+    margin-top: 150px;
+}
+
+.projects-section .heading > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-section .heading h1 {
+    font-size: 50px;
+}
+
+.projects-section .cards-container {
+    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.projects-section .cards-container .card {
+    width: 30%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.404);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.projects-section .cards-container p {
+    margin-bottom: 20px;
+}
+.projects-section .cards-container .card > img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+}
+
+/* star rating system */
+.star-rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    width: fit-content;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #ddd;
+    font-size: 24px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating input:checked ~ label ~ label {
+    color: #f5af18;
+}
+
+.star-rating input:hover ~ label,
+.star-rating input:hover ~ label ~ label {
+    color: #f1c824;
+}
+
+@media screen and (max-width: 768px) {
+    .projects-section .heading p {
+        text-align: center;
+    }
+    .projects-section .heading > span {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .projects-section .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .projects-section .cards-container .card {
+        width: 80%;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 430px) {
+    .projects-section .heading h1 {
+        font-size: 12vw;
+    }
+}
+/* ====================== Data section ====================== */
+.data-section .heading {
+    margin-top: 150px;
+}
+
+.data-section .heading h1 {
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.data-section .data-container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.data-section .data-container .text-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+    text-align: justify;
+}
+
+.data-section .data-container .text-side button {
+    width: 147px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: #1F1F1F;
+    color: #FAFAFA;
+    margin: 20px 10px;
+}
+
+.data-section .data-container .text-side .btn-2 {
+    width: 147px;
+    height: 60px;
+    border-radius: 40px;
+    color: #1F1F1F;
+    background-color: #FAFAFA;
+    margin: 20px 20px;
+}
+
+.data-section .data-container table {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.data-container table th {
+    font-size: 5vw;
+}
+
+.data-section .data-container .image-side {
+    width: 50%;
+    text-align: center;
+}
+
+.data-section .data-container .image-side img {
+    width: 70%;
+}
+@media screen and (max-width:1024px) {
+    .data-section{
+        padding: 20px;
+        overflow: hidden;
+    }
+    .data-section .data-container {
+        /* margin-top: 70px;
+        display: flex;
+        justify-content: space-between; */
+
+        flex-direction: column-reverse;
+    }
+    .data-section .data-container .text-side {
+        width: 100%;
+        padding: 10px;
+    }
+    .data-section .data-container .image-side {
+        width: 100%;
+        text-align: center;
+    }
+    .data-section .data-container .image-side img {
+        width: 70%;
+        object-fit: cover;
+    }
+    .data-container table th {
+        font-size: 10vw;
+    }
+}
+@media screen and (max-width:430px) {
+    .data-section .heading h1 {
+        line-height: 15vw;
+        text-align: center;
+        font-size: clamp(30px, 10vw, 42px);
+    }
+    .data-section .data-container .text-side .btn {
+        margin: 20px 0;
+    }
+    .data-section .data-container .text-side button {
+        width: 100%;
+        height: 60px;
+        border-radius: 40px;
+        background-color: #1F1F1F;
+        color: #FAFAFA;
+        margin: 0;
+    }
+    .data-section .data-container .text-side .btn-2 {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .data-container table p {
+        font-size: 4vw;
+    }
+}
+
+/* ===================== subscribe Section ======================== */
+.subscribe-section {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    height: 80vh;
+}
+
+.subscribe-container {
+    height: clamp(50vh, 40vw, 70vh);
+    background-image: url(assests/images/banner1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.subscribe-container .text-side {
+    flex: 4;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subscribe-container .text-side h1 {
+    font-size: clamp(40px, 4vw, 60px);
+    font-weight: bolder;
+    line-height: clamp(51px, 5vw, 70px);
+    margin-top: 20px;
+}
+
+.subscribe-container .text-side p {
+    margin-top: 20px;
+}
+
+.subscribe-container .text-side .input {
+    width: fit-content;
+    position: relative;
+    margin-top: 20px;
+}
+
+.subscribe-container .text-side input {
+    height: 60px;
+    width: 438px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    padding: 20px;
+}
+
+.subscribe-container .text-side button {
+    width: 147px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: #1F1F1F;
+    border: none;
+    color: #FAFAFA;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.subscribe-container .image-side {
+    flex: 6;
+    height: fit-content;
+}
+
+.subscribe-container .image-side img {
+    width: 100%;
+}
+
+@media screen and (max-width:1024px) {
+    .subscribe-section {
+        height: fit-content;
+    }
+
+    .subscribe-container {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+
+    .subscribe-container .text-side {
+        padding: 50px 70px;
+    }
+    .subscribe-container .image-side {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .subscribe-container .image-side img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .subscribe-container .text-side {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .subscribe-container .text-side input {
+        height: 6vw;
+        min-height: 32px;
+        width: 70vw;
+        min-width: 366px;
+        border-radius: 40px;
+        border: none;
+        outline: none;
+        padding: 10px;
+    }
+
+    .subscribe-container .text-side button {
+        width: 20vw;
+        min-width: 105px;
+        height: 6vw;
+        min-height: 32px;
+    }
+    .subscribe-container .image-side {
+        text-align: right;
+    }
+
+    .subscribe-container .image-side img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .subscribe-container .text-side h1 {
+        font-size: 40px;
+        font-weight: bolder;
+        line-height: 50px;
+        margin-top: 20px;
+    }
+    .subscribe-container .text-side .input {
+        width: 100%;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .subscribe-container .text-side input {
+        height: 32px;
+        width: 100%;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .subscribe-container .text-side button {
+        width: 100%;
+        height: 32px;
+        min-height: unset;
+        min-width: unset;
+        position: static;
+    }
+    
+}
